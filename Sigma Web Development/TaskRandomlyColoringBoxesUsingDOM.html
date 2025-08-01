@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColoringBoxesUsingDOM</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 23px;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+            width: 45px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".box").forEach(e => {
+            r = Math.random() * 100
+            g = Math.random() * 100
+            b = Math.random() * 100
+            e.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+            e.style.color = "white"
+        });
+    </script>
+</body>
+</html>
