@@ -1,0 +1,7 @@
+.Box {
+    width: 50px;
+    padding: 5px;
+    border: 2px dashed black;
+    margin: 10px;
+    background-color: yellowgreen;
+}
