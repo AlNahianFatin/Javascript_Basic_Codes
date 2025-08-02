@@ -32,11 +32,10 @@
 
     <script>
         document.querySelectorAll(".box").forEach(e => {
-            r = Math.random() * 100
-            g = Math.random() * 100
-            b = Math.random() * 100
+            r = Math.ceil(0 + Math.random() * 256) //formula: min + Math.random() * (max - min + 1) for generating random numbers between min ~ max and Math.ceil performs ceiling operation (next nearest integer) to the floating result
+            g = Math.ceil(0 + Math.random() * 256)
+            b = Math.ceil(0 + Math.random() * 256)
             e.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-            e.style.color = "white"
         });
     </script>
 </body>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Inserting_and_Removing_Elements</title>
+</head>
+
+<body>
+    <div class="container chest suitcase">
+        <div class="box" data-createdbytheHekkerrr="Fatin" data-followed_YT="Code With Harry">Hey</div>
+        <div class="box" style="display: flex; border: 1px solid black; color: yellowgreen;">I am a box</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div id="demo">
+            Hello <span style="display: none;">Invisible</span> World
+        </div>
+    </div>
+
+    <script>
+        console.log(document.querySelector(".box"))
+        console.log(document.querySelector(".box").innerText) //returns only the  visible text (e.g., ignores display: none) elements with the class box. 
+        console.log(document.querySelector(".container").innerText)
+        console.log(document.querySelector(".container").innerHTML) //only returns the HTMLs inside the class
+        console.log(document.querySelector(".container").outerHTML) //returns the inner as well as the HTML itself that has the class container
+        console.log(document.querySelector("body").tagName) //only works for element nodes
+        console.log(document.querySelector("body").nodeName) //works for all the nodes including texts, comments etc
+        console.log(document.querySelector(".container").textContent) //Returns all text as it exists in the DOM, even if it’s hidden with CSS. Ignores CSS styles like display: none, visibility: hidden.
+
+        console.log(document.getElementById("demo").innerText) //returns only the  visible text (e.g., ignores display: none) elements with the id demo 
+        console.log(document.getElementById("demo").textContent) //Returns all text as it exists in the DOM, even if it’s hidden with CSS. Ignores CSS styles like display: none, visibility: hidden.
+
+        console.log(document.querySelector(".box").hidden) //returns boolean whether the 1st element with class box is hidden or not
+        document.querySelector(".box").hidden = true //hides the 1st element with class box
+        console.log(document.querySelector(".box").hidden) //now this becomes true
+        document.querySelectorAll(".box")[1].innerHTML = "Hi! I am Fatin!" //changes "I am a box" to "Hi! I am Fatin!"
+
+        console.log(document.querySelector(".box").hasAttribute("style"))
+        console.log(document.querySelector(".box").hasAttribute("class"))
+        document.querySelectorAll(".box")[1].setAttribute("style", "color: red; border: 1px dotted black")
+        console.log(document.querySelector(".box").attributes)
+        document.querySelectorAll(".box")[1].removeAttribute("style") 
+        document.querySelectorAll(".box")[1].removeAttribute("style", "color: yellowgreen") //removeAttribute is removing all the style properties in both cases, not just the color
+
+        document.querySelectorAll(".box")[1].setAttribute("style", "color: green; border: 2px dashed red; width: 200px")
+        
+        document.designMode = 'on' //enables editing within the web page!!!
+        
+        console.log(document.querySelector(".box").dataset)
+
+        let creation = document.createElement("div")
+        creation.setAttribute("class", "created")
+        creation.innerHTML = "Boom! It's magic!"
+        document.querySelector(".container").append(creation)
+        document.querySelector("#demo").before(creation)    
+        
+        document.querySelector("#demo").insertAdjacentHTML("afterbegin", "<b>Call me daddy!</b>")
+
+        document.querySelectorAll(".box")[3].remove()
+
+        document.querySelector(".container").classList.add("fatin!")
+        document.querySelector(".container").classList.add("fatin!") //will only add one time
+        console.log(document.querySelector(".container").classList) //returns as DOMTokernList
+        console.log(document.querySelector(".container").className) //returns as plain names
+        console.log(document.getElementsByClassName("container")) //returns as HTMLCollection
+        
+        document.querySelector(".container").classList.replace("fatin!", "Harry")
+        console.log(document.querySelector(".container").className)
+        
+        document.querySelector(".container").classList.remove("harry")
+        console.log(document.querySelector(".container").className) //nothing is changed as there exists no class named "harry". The class name is "Harry" (case-sensitive)
+
+        document.querySelector(".container").classList.remove("Harry")
+        console.log(document.querySelector(".container").className)
+
+        console.log(document.querySelector(".container").classList.toggle("Brishti")) //as there wasn't any class named brishti, it will get added and return true
+        console.log(document.querySelector(".container").className)
+        console.log(document.querySelector(".container").classList.toggle("Brishti")) //as there was already a class named brishti, it will get removed and return false
+        console.log(document.querySelector(".container").className)
+
+        console.log(document.querySelector(".container").classList.toggle("Bonna") ? "added Bonna" : "Bonna removed")
+        console.log(document.querySelector(".container").classList.toggle("Bonna") ? "added Bonna" : "Bonna removed")
+
+    </script>
+</body>
+
+</html>
