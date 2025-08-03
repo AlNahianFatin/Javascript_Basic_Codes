@@ -380,3 +380,12 @@
 // }
 // console.log(numberOfArray([12, 0., 5.18, 12.85000074, 'fatin', 'al', 'nahian', 'long']))
 // console.log(numberOfArray([12, 0., 5.18, 12.85000074, 'short']))
+
+var name = "aiub"
+var name = "buet"
+console.log(name)
+
+let num1 = 0.1234567890123456789012345
+console.log(num1)
+let num2 = 1234567890.1234567890123456789012345
+console.log(num2)
