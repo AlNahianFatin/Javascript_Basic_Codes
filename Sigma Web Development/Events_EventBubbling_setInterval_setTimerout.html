@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events_EventBubbling_setInterval_setTimerout</title>
+
+    <style>
+        .box {
+            background-color: brown;
+            cursor: pointer;
+        }
+        .childContainer {
+            padding: 30px;
+            background-color: rgb(88, 53, 7);
+            cursor: help;
+        }
+        .container {
+            padding: 30px;
+            background-color: burlywood;
+            cursor: help;
+        }
+        #btn {
+            cursor: progress;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="childContainer">
+            <div class="box">Hey I am a box</div>
+        </section>
+    </div>
+    <button id="btn">Change Content</button>
+
+    <script src="Events_EventBubbling_setInterval_setTimerout.js"></script>
+</body>
+</html>
