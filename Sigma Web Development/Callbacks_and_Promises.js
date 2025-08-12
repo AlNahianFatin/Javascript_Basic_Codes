@@ -14,6 +14,7 @@ setTimeout(() => { //Even this has 0 delay, still it will be executed later, tho
 
 console.log("The End");
 
+
 //callback funtion
 const fn = () => { //this is called arrow function
     console.log("Printing from 2nd callback function");
@@ -32,6 +33,7 @@ const loadScript = (src, callback) => {
 }
 loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", callback)
 
+
 //promise - promise of code execution
 let prom1 = new Promise((resolve, reject) => {
     let r = 0.8
@@ -44,7 +46,6 @@ let prom1 = new Promise((resolve, reject) => {
         }, 1000);
     }
 })
-
 let prom2 = new Promise((resolve, reject) => {
     r = 0.8
     if (r < 0.5)
