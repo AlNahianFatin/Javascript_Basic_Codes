@@ -1,3 +1,7 @@
+//settle means resolve or reject
+//resolve means promise has settled successfully
+//reject means promise has not settled successfully
+
 console.log("Fatin is a hacker");
 
 setTimeout(() => { //As javascript is asynchronous in nature, this setTimeout method will get executed later
