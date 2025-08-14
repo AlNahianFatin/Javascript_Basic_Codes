@@ -381,11 +381,74 @@
 // console.log(numberOfArray([12, 0., 5.18, 12.85000074, 'fatin', 'al', 'nahian', 'long']))
 // console.log(numberOfArray([12, 0., 5.18, 12.85000074, 'short']))
 
-var name = "aiub"
-var name = "buet"
-console.log(name)
+// var name = "aiub"
+// console.log(name) 
+// var name = "buet"
+// console.log(name) 
 
-let num1 = 0.1234567890123456789012345
-console.log(num1)
-let num2 = 1234567890.1234567890123456789012345
-console.log(num2)
+// let num1 = 12345678901234561 //last 1 is converted as 0
+// console.log(num1)
+// let num2 = 0.12345678901234567 //last 7 is converted to 6
+// console.log(num2)
+// let num3 = 1234567890.1234563 //last 3 is converted to 2
+// console.log(num3)
+
+// var x = 0.2 + 0.1; //x will be 0.30000000000000004
+// console.log(x);
+// var x = (0.2 * 10 + 0.1 * 10) / 10; // x will be 0.3
+// console.log(x);
+
+// var name= 'My name is "Jon"'; //My name is "Jon"
+// console.log(name);
+// var name= "My name is 'Jon'"; //My name is 'Jon'
+// console.log(name);
+
+// var a = null; //this one is null
+// console.log(a);
+// var b; //this one is undefined
+// console.log(b);
+// var c = undefined; //this one is undefined explicitly
+// console.log(c);
+
+// var x = "0";
+// var text;
+// switch(x) {
+//     case 0: //though the values are the same, switch cases compare strictly (using operator ===), so output is false
+//         text = "number 0";
+//         break;
+//     case "":
+//         text = "string with no value"
+//         break;
+//     case '0':
+//         text = "string 0";
+//         break;
+//     default:
+//         text = false;
+// }
+// text ? console.log("x is a", text) : console.log("x is not identified");
+
+// var x1;
+// console.log(x1);
+// console.log(typeof x1);
+// console.log(typeof(x1));
+// var x2 = "";
+// console.log(x2); //empty string is stored and will be printed
+// console.log(typeof x2);
+
+var cars = ["Saab", "Volvo", "BMW"];
+console.log(cars);
+console.log(typeof cars);
+
+var cars2 = new Array("Mitsubishi", "Ferrari", "Porshe");
+console.log(cars2)
+
+//creating unordered list using DOM
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
