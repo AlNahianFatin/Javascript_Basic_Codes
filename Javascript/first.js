@@ -435,20 +435,59 @@
 // console.log(x2); //empty string is stored and will be printed
 // console.log(typeof x2);
 
-var cars = ["Saab", "Volvo", "BMW"];
-console.log(cars);
-console.log(typeof cars);
+// var cars = ["Saab", "Volvo", "BMW"];
+// console.log(cars);
+// console.log(typeof cars);
 
-var cars2 = new Array("Mitsubishi", "Ferrari", "Porshe");
-console.log(cars2)
+// var cars2 = new Array("Mitsubishi", "Ferrari", "Porshe");
+// console.log(cars2)
 
-//creating unordered list using DOM
-var fruits, text, fLen, i;
-fruits = ["Banana", "Orange", "Apple", "Mango"];
-fLen = fruits.length;
-text = "<ul>";
-for (i = 0; i < fLen; i++) {
-  text += "<li>" + fruits[i] + "</li>";
+// //creating unordered list using for loop in document
+// var fruits, text, fLen, i;
+// fruits = ["Banana", "Orange", "Apple", "Mango"];
+// fLen = fruits.length;
+// text = "<ul>";
+// for (i = 0; i < fLen; i++) {
+//     text += "<li>" + fruits[i] + "</li>";
+// }
+// text += "</ul>";
+// document.getElementById("demo").innerHTML = text;
+
+// //creating unordered list using foreach loop in document
+// function myFunction(value) {
+//     text += "<li>" + value + "</li>";
+// }
+// text = "<ul>";
+// cars2.forEach(myFunction);
+// text += "</ul>";
+// document.getElementById("demo2").innerHTML = text;
+
+// //using js method toString() to convert values of an array to a string of coma separated array values
+// document.getElementById("demo3").innerHTML = fruits.toString();
+
+// //using js method join()  to join values of an array into a string with customizations of the array values
+// document.getElementById("demo4").innerHTML = fruits.join(" & ");
+
+// //using pop() in array
+// fruits = ["Banana", "Orange", "Apple", "Mango"];
+// console.log("Fruits before popping:", fruits)
+// console.log("Returning the popped value as string:", fruits.pop())
+// console.log("Fruits after popping:", fruits)
+
+// //using push() in array
+// console.log("\nFruits before pushing:", fruits)
+// console.log("Returning the length of array after pushing:", fruits.push("Kiwi"))
+// console.log("Fruits after pushing:", fruits)
+// console.log("Returning the length of array after pushing same value again:", fruits.push("Kiwi"))
+// console.log("Fruits after pushing same value again:", fruits)
+
+// var x = 15 * 5;
+// debugger; //debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function
+// document.getElementById("demo").innerHTML = x;
+
+function multiply(a, b) {
+  debugger; // pause here! When the JS interpreter encounters debugger; while running code and you have developer tools (DevTools) open in your browser, execution will pause right there.
+  let result = a * b;
+  return result;
 }
-text += "</ul>";
-document.getElementById("demo").innerHTML = text;
+console.log(multiply(5, "10"));
