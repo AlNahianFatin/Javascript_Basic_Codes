@@ -485,9 +485,26 @@
 // debugger; //debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function
 // document.getElementById("demo").innerHTML = x;
 
-function multiply(a, b) {
-  debugger; // pause here! When the JS interpreter encounters debugger; while running code and you have developer tools (DevTools) open in your browser, execution will pause right there.
-  let result = a * b;
-  return result;
+// function multiply(a, b) {
+//   debugger; // pause here! When the JS interpreter encounters debugger; while running code and you have developer tools (DevTools) open in your browser, execution will pause right there.
+//   let result = a * b;
+//   return result;
+// }
+// console.log(multiply(5, "10"));
+
+// function add (num1, num2) { 
+//   result = num1 + num2; 
+//   console.log(num1, '+', num2, '=', result);
+// }
+// add(5); //num1 = 5, num2 = undefined //number + undefined = NaN
+// add(); //num1 = undefined, num2 = undefined //undefined + undefined = NaN
+// add('abcd'); //num1 = 'abcd', num2 = undefined //string + undefined = abcdundefined (string concatenation)
+
+function add1 (num1, num2 = 0) { //if no value for 2nd parameter num2 is passed, its default value will be considered as 0
+  console.log(num1 + ' + ' + num2 + ' = ' + "\n" + (num1 + num2));
+  console.log(`${num1} + ${num2} = 
+    ${num1 + num2}`); //template string using backtick
 }
-console.log(multiply(5, "10"));
+add1(5, 25); 
+add1(); 
+add1('abcd');
