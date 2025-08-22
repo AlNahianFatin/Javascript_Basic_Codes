@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try_Catch_and_Error_Handling</title>
+</head>
+
+<body>
+    <script>
+        let a = prompt("Enter 1st number: ")
+        let b = prompt("Enter 2nd number: ")
+        
+        function sumTwoNum() {
+            try {
+                if (!isNaN(a) && !isNaN(b)) {
+                    let sum = Number(a) + Number(b)
+                    // throw SyntaxError("Sorry! a is not a number")
+                    let para = document.createElement("p")
+                    para.innerHTML = `Sum of ${a} and ${b} is ${sum}`
+                    document.body.appendChild(para)
+                    return true
+                }
+                else {
+                    throw  new SyntaxError("Error occured!")
+                }
+            }
+            catch (error) {
+                if (isNaN(a)) {
+                    console.log("Sorry! a is not a number")
+                }
+                if (isNaN(b)) {
+                    console.log("Sorry! b is not a number")
+                }
+                console.error("Error caught!")
+                return false
+            }
+            finally { //though in previous blocks return statements are being executed, still the finally block's code will run in spite of being inside a function
+                console.log("\nError handled successfully!")
+            }
+        }
+
+        let c = sumTwoNum()
+        console.log("Addition executed successfully : ", c)
+    </script>
+</body>
+
+</html>
