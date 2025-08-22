@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    <script>
+        // let animal = {
+        //     eats : true
+        // }
+        // let rabbit = {
+        //     jumps : true
+        // }
+        // console.log(rabbit)
+
+        // //prototype means the method to add some more properties to an object
+        // rabbit.__proto__ = animal //sets rabbit.[[Prototype]] = animal
+        // console.log("Does rabbit jump?" , rabbit.jumps)
+        // console.log("Does rabbit eat?" , rabbit.eats)
+        // console.log(rabbit)
+
+        class Animal {
+            constructor(name) {
+                this.name = name
+                console.log(`\n${name} is created`)
+            }
+
+            get name() {
+                return this._name
+            }
+            set name(value) {
+                if (value.length <= 4) {
+                    alert("Name too short")
+                    console.log(`\nSorry! name ${value} is too short`)
+                    return
+                }
+                this._name = value
+            }
+
+            eats() {
+                console.log("This animal eats")
+            }
+
+            jumps() {
+                console.log("This animal jumps")
+            }
+        }
+        
+        class Lion extends Animal {
+            constructor(name, roar) {
+                super(name)
+                this.roar = roar
+                console.log(`${name} is a special type of animal`)
+            }
+
+            roars() {
+                console.log(`This animal roars like... ${this.roar}!`)
+            }
+
+            eats() { //method overriding
+                super.eats()
+                console.log("But only flesh\nWoahhh dangerous!")
+            }
+        }
+
+        let a = new Animal("Doggy")
+        console.log(a)
+        console.log("Animal name : ", a.name)
+        a.eats()
+        a.jumps()
+
+        let l = new Lion("Sher", "Halum") //Sher is passed to the constructor and stored within its block only but getter setter methods are also automatically being called here
+        console.log(l)
+        console.log("Is l an instance of Lion? : ", l instanceof Lion)
+        console.log("Is l an instance of Animal? : ", l instanceof Animal)
+        console.log("Lion name : ", l.name) //When Sher name is trying to be accessed, name value from the getter setter methods are now being used and here the name is not being assigned because of the if block condition
+        l.eats()
+        l.jumps()
+        l.roars()
+    </script>
+</body>
+
+</html>
