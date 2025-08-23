@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskLocalStorage</title>
+</head>
+
+<body>
+    <script>
+        //local storage - local database inside a browser that are not stored and shared within the browsers
+        if (localStorage.getItem("name")) {
+            name = localStorage.getItem("name")
+            document.write("Welcome, ", name)
+        }
+        else {
+            let name = prompt("Enter your name : ")
+            localStorage.setItem("name", name)
+            document.write("Welcome, ", name)
+        }
+
+        fatin = {
+            al: 4,
+            nahian: 6,
+            fatin: 5
+        }
+        console.log(fatin) //printing the object
+        localStorage.setItem("guys", JSON.stringify(fatin)) //converting object fatin to string and storing the string in a local storage variable guys
+        console.log(localStorage.getItem("guys")) //printing the string
+        console.log(JSON.parse(localStorage.getItem("guys"))) //converting the string back to object and printing this
+        // to view the locally stored variables with values -> browser inspect - Application - Storage section - Local Storage - http://127.0.0.1:5500
+    </script>
+</body>
+
+</html>
