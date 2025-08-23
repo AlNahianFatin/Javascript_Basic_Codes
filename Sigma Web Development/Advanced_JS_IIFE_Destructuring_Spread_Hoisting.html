@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced_JS</title>
+</head>
+
+<body>
+    <script>
+        //IIFE
+        // async function sleep() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve(45)
+        //         }, 1000);
+        //     })
+        // }
+
+        // let a = await sleep() //will show error because await must be put inside async function
+        // let b = await sleep()
+        // (async function main() { //this is an invoke function and this process is IIFE - Immediately Invoked Function Expression
+        //     let a = await sleep()
+        //     console.log(a)
+        //     let b = await sleep()
+        //     console.log(b)
+        // })()
+
+        //Destructuring
+        (async function main2() {
+            let x, y = [1, 5]
+            console.log(x, y) //undefined here
+            let [x2, y2] = [1, 5, 7] //getting x and y values from the array
+            console.log(x2, y2)
+            let [x3, y3, ...rest] = [1, 5, 7, 8, 123] //Destructuring - declaring a variable named "rest" after the "..." to store all the remaining values in the rest variable
+            console.log(x2, y2, rest)
+
+            let obj = {
+                a2: 1,
+                b2: 2,
+                c2: 3
+            }
+            let { a2, b2 } = obj
+            console.log(a2, b2)
+        })()
+
+        //Spread syntax
+        function sum(a3, b3, c3) {
+            return a3 + b3 + c3
+        }
+        let arr = [1, 4, 6]
+        console.log(sum(arr[0], arr[1], arr[2]))
+        console.log(sum(...arr)) //instructs arr's values to spread
+        //this makes such an object where => "index: value"... 0: arr[0], 1: arr[1], 2: arr[2]
+
+        //Hoisting
+        // console.log(a3) //hoisting is not done here as the var declaration/initialization was done inside the function (block), so hoisting will also only be done inside that block
+        hoistingExample() //functions are automatically hoisted unless it is used with const
+        function hoistingExample() {
+            //var a3 //JS interpreter automatically adds declaration of var variable before execution like this
+            console.log(a3) //declaring/initializing a variable as var after call/use, JS interpreter will automatically declare it before the execution - Hoisting. But as only declaration is done, the value will remain undefined
+            // console.log(a4) //Hoisitng won't happen here and we will get reference error for trying to access a4 before initialization
+            var a3 = 5
+            let a4 = 6
+        }
+        // constNoHoisting() //hoisitng is not done here because the function was declared/initialized with const (using let also does the same). So will again result in reference error
+        const constNoHoisting = async () => {
+            console.log("Will get error!")
+        }
+        letNoHoisting() //hoisitng is not done here because the function was declared/initialized with let. So will again result in reference error
+        const letNoHoisting = async () => {
+            console.log("Will get error!")
+        }
+    </script>
+</body>
+
+</html>
