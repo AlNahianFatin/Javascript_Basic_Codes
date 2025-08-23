@@ -14,7 +14,7 @@
         
         function sumTwoNum() {
             try {
-                if (!isNaN(a) && !isNaN(b)) {
+                if (!isNaN(a) && a.trim()!=="" && !isNaN(b) && b.trim()!="") {
                     let sum = Number(a) + Number(b)
                     // throw SyntaxError("Sorry! a is not a number")
                     let para = document.createElement("p")
